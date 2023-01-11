@@ -1,0 +1,116 @@
+{
+    "empStr": {
+        "empId": "9000",
+        "empName": "Ned Stark",
+        "salary": 9600,
+        "currency": "INR",
+        "smoker": true,
+        "gender": "M",
+        "mStat": "M",
+        "rating": 5,
+        "city": "El Salvador",
+        "country": "ES",
+        "enabled":false
+    },
+    "empTab": [
+        {
+            "empId": "9000",
+            "empName": "Ned Stark",
+            "salary": 9600,
+            "currency": "AED",
+            "smoker": true,
+            "gender": "M",
+            "mStat": "M",
+            "rating": 5,
+            "city": "El Salvador",
+            "country": "ES"
+        },
+        {
+            "empId": "9001",
+            "empName": "Denerias",
+            "salary": 8900,
+            "currency": "USD",
+            "smoker": true,
+            "gender": "F",
+            "mStat": "M",
+            "rating": 5,
+            "city": "delhi",
+            "country": "IN"
+        },
+        {
+            "empId": "9002",
+            "empName": "John Snow",
+            "salary": 15000,
+            "currency": "AED",
+            "smoker": false,
+            "gender": "M",
+            "mStat": "S",
+            "rating": 2,
+            "city": "Bangaluru",
+            "country": "IN"
+        },
+        {
+            "empId": "9003",
+            "empName": "Alia",
+            "salary": 8500,
+            "currency": "AED",
+            "smoker": false,
+            "gender": "D",
+            "mStat": "M",
+            "rating": 5,
+            "city": "Dubai",
+            "country": "UAE"
+        },
+        {
+            "empId": "9004",
+            "empName": "Sarsi",
+            "salary": 98000,
+            "currency": "EUR",
+            "smoker": true,
+            "gender": "F",
+            "mStat": "S",
+            "rating": 3,
+            "city": "Berlin",
+            "country": "DE"
+        },
+        {
+            "empId": "9005",
+            "empName": "Robert",
+            "salary": 78000,
+            "currency": "USD",
+            "smoker": false,
+            "gender": "M",
+            "mStat": "M",
+            "rating": 3,
+            "city": "Chicago",
+            "country": "US"
+        },
+        {
+            "empId": "9006",
+            "empName": "Tirian",
+            "salary": 9800,
+            "currency": "CAD",
+            "smoker": false,
+            "gender": "M",
+            "mStat": "S",
+            "rating": 5,
+            "city": "Torronto",
+            "country": "CA"
+        }
+    ],
+    "cities": [{
+        "name": "Dubai"
+    },{
+        "name": "Mumbai"
+    },{
+        "name": "Chennai"
+    },{
+        "name": "Chicago"
+    },{
+        "name": "Toprronto"
+    },{
+        "name": "Hyderabad"
+    },{
+        "name": "Bangaluru"
+    }]
+}

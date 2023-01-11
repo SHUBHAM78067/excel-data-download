@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<data>
+    <empStr>
+        <empId>8000</empId>
+        <empName>Avengers</empName>
+        <salary>85000</salary>
+        <currency>INR</currency>
+        <smoker>false</smoker><gender>https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg</gender>
+        <mStat>S</mStat>
+        <rating>5</rating>
+        <gender>https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg</gender>
+    </empStr>
+    <empTab>
+        <row>
+            <empId>8001</empId>
+            <empName>Ironman</empName>
+            <salary>98000</salary>
+            <currency>EUR</currency>
+            <smoker>true</smoker>
+            <mStat>S</mStat>
+            <rating>4</rating>
+            <gender>https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg</gender>
+        </row>
+        <row>
+            <empId>8002</empId>
+            <empName>Wonder Women</empName>
+            <salary>79000</salary>
+            <currency>USD</currency>
+            <smoker>false</smoker>
+            <mStat>M</mStat>
+            <rating>4</rating>
+            <gender>https://cdn-icons-png.flaticon.com/512/146/146025.png</gender>
+        </row>
+        <row>
+            <empId>8003</empId>
+            <empName>Sophia</empName>
+            <salary>125000</salary>
+            <currency>INR</currency>
+            <smoker>false</smoker>
+            <mStat>M</mStat>
+            <rating>3</rating>
+            <gender>https://cdn-icons-png.flaticon.com/512/146/146025.png</gender>
+        </row>
+        <row>
+            <empId>8004</empId>
+            <empName>Ct. America</empName>
+            <salary>25000</salary>
+            <currency>AED</currency>
+            <smoker>true</smoker>
+            <mStat>S</mStat>
+            <rating>2</rating>
+            <gender>https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg</gender>
+        </row>
+        <row>
+            <empId>8005</empId>
+            <empName>Dr. Strange</empName>
+            <salary>55000</salary>
+            <currency>EUR</currency>
+            <smoker>true</smoker>
+            <mStat>M</mStat>
+            <rating>4</rating>
+            <gender>https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg</gender>
+        </row>
+    </empTab>
+</data>
