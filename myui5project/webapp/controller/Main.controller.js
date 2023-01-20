@@ -2,13 +2,19 @@ sap.ui.define(
   [
     "mickey/controller/BaseController",
     "mickey/models/model",
-    'sap/ui/export/library',
+    "sap/ui/export/library",
     "sap/ui/export/Spreadsheet",
     "mickey/util/lifeSaver",
   ],
   //call back which will get called when all dependencies are loaded
-  function (BaseController, Model, exportLibrary, Spreadsheet, NumberFormat, lifeSaver) {
-
+  function (
+    BaseController,
+    Model,
+    exportLibrary,
+    Spreadsheet,
+    NumberFormat,
+    lifeSaver
+  ) {
     var EdmType = exportLibrary.EdmType;
     return BaseController.extend("mickey.controller.Main", {
       formatter: lifeSaver,
@@ -41,7 +47,7 @@ sap.ui.define(
           label: "Full name",
           property: "empName",
           type: EdmType.String,
-        //   template: "{0}, {1}",
+          //   template: "{0}, {1}",
         });
 
         aCols.push({
@@ -74,7 +80,6 @@ sap.ui.define(
       },
 
       onExport: function (oEvent) {
-
         debugger;
         var aCols, oRowBinding, oSettings, oSheet, oTable;
 
@@ -85,8 +90,7 @@ sap.ui.define(
         aCols = this.createColumnConfig();
 
         oTable = this._oTable;
-        oRowBinding = this.getView().getModel().getProperty('/empTab');
-       
+        oRowBinding = this.getView().getModel().getProperty("/empTab");
 
         oSettings = {
           workbook: {
@@ -95,7 +99,7 @@ sap.ui.define(
           },
           dataSource: oRowBinding,
           fileName: "Table export sample.xlsx",
-        //   worker: true, // We need to disable worker because we are using a MockServer as OData Service
+          //   worker: true, // We need to disable worker because we are using a MockServer as OData Service
         };
 
         oSheet = new Spreadsheet(oSettings);
