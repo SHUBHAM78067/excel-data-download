@@ -20,9 +20,69 @@
             "currency": "INR",
             "smoker": true,
             "gender": "https://cdn-icons-png.flaticon.com/512/4128/4128176.png",
-            "mStat": "S",
+            "mStat": " ",
             "rating": 4,
             "city": "Gurgaon",
+            "country": "IN"
+        },
+        {
+            "empId": "1002",
+            "empName": "Anu",
+            "salary": 5800,
+            "currency": "USD",
+            "smoker": true,
+            "gender": "https://cdn-icons-png.flaticon.com/512/4128/4128176.png",
+            "mStat": "H",
+            "rating": 3,
+            "city": "delhi",
+            "country": "IN"
+        },
+        {
+            "empId": "1003",
+            "empName": "Govind",
+            "salary": 5800,
+            "currency": "USD",
+            "smoker": true,
+            "gender": "https://cdn-icons-png.flaticon.com/512/4128/4128176.png",
+            "mStat": "M",
+            "rating": 3,
+            "city": "delhi",
+            "country": "IN"
+        },
+        {
+            "empId": "1004",
+            "empName": "Gopal",
+            "salary": 5800,
+            "currency": "USD",
+            "smoker": true,
+            "gender": "https://cdn-icons-png.flaticon.com/512/4128/4128176.png",
+            "mStat": "M",
+            "rating": 3,
+            "city": "delhi",
+            "country": "IN"
+        },
+        {
+            "empId": "1005",
+            "empName": "Surya",
+            "salary": 5800,
+            "currency": "USD",
+            "smoker": true,
+            "gender": "https://cdn-icons-png.flaticon.com/512/4128/4128176.png",
+            "mStat": "S",
+            "rating": 3,
+            "city": "delhi",
+            "country": "IN"
+        },
+        {
+            "empId": "1002",
+            "empName": "Sarla",
+            "salary": 5800,
+            "currency": "USD",
+            "smoker": true,
+            "gender": "https://cdn-icons-png.flaticon.com/512/4128/4128176.png",
+            "mStat": "H",
+            "rating": 3,
+            "city": "delhi",
             "country": "IN"
         },
         {
@@ -50,13 +110,13 @@
             "country": "IN"
         },
         {
-            "empId": "1004",
-            "empName": "Riyaz",
+            "empId": "1000",
+            "empName": "Riya",
             "salary": 8500,
             "currency": "AED",
             "smoker": false,
             "gender": "https://cdn-icons-png.flaticon.com/512/4128/4128176.png",
-            "mStat": "M",
+            "mStat": " ",
             "rating": 5,
             "city": "Dubai",
             "country": "UAE"
@@ -86,13 +146,13 @@
             "country": "US"
         },
         {
-            "empId": "1007",
+            "empId": "1000",
             "empName": "Megha",
             "salary": 9800,
             "currency": "CAD",
             "smoker": false,
             "gender": "https://cdn-icons-png.flaticon.com/512/146/146025.png",
-            "mStat": "S",
+            "mStat": " ",
             "rating": 5,
             "city": "Torronto",
             "country": "CA"

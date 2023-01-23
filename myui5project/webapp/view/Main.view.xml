@@ -1,16 +1,15 @@
-<minion:View xmlns:core="sap.ui.core" xmlns:minion="sap.ui.core.mvc" xmlns="sap.m" 
-             xmlns:f="sap.ui.layout.form" xmlns:t="sap.ui.table" controllerName="mickey.controller.Main">
+<minion:View xmlns:core="sap.ui.core" xmlns:minion="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:t="sap.ui.table" controllerName="mickey.controller.Main">
     <t:Table id="idEmpTab" visibleRowCount="5" selectionMode="Single" rowSelectionChange="onRowSelect">
-        <t:extension >
-            <OverflowToolbarButton text="Download" icon="sap-icon://download" press="onExport"   />
+        <t:extension>
+            <OverflowToolbarButton text="Download" icon="sap-icon://download" press="onExport" />
         </t:extension>
         <t:columns>
-            <t:Column label="{i18n>XLBL_EMPID}">
+            <t:Column label="{i18n>XLBL_EMPID}" id="idEmpId" columnMenuOpen="oncolumnMenuOpen" >
                 <t:template>
                     <Text text="{empId}" />
                 </t:template>
             </t:Column>
-            <t:Column>
+            <!-- <t:Column>
                 <t:label>
                     <Text text="{i18n>XLBL_EMPNAME}" />
                 </t:label>
@@ -43,11 +42,12 @@
                 <t:template>
                     <RatingIndicator value="{rating}" />
                 </t:template>
-            </t:Column>
+            </t:Column> -->
             <t:Column label="{i18n>XLBL_MSTAT}">
                 <t:template>
-                    <Select selectedKey="{mStat}">
+                    <Select id="select" selectedKey="{mStat}" change="onSelectChange">
                         <items>
+                            <core:Item key="B" text=" " />
                             <core:Item key="M" text="Married" />
                             <core:Item key="S" text="Single" />
                             <core:Item key="H" text="Happily Married" />

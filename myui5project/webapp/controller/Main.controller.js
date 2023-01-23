@@ -107,6 +107,19 @@ sap.ui.define(
           oSheet.destroy();
         });
       },
+      onSelectChange: function(oEvent){
+        debugger;
+        var sKey = oEvent.getParameters().selectedItem.getKey();
+        var  sSelectPath = oEvent.getSource().getBindingContext().sPath;
+        var selectRowNo =  sSelectPath.split("/")[2];
+        var oModel = this.getView().getModel();
+        var stabdata =    oModel.getData().empTab;
+        var gEmpid =   stabdata[selectRowNo].empId;
+
+      },
+      oncolumnMenuOpen: function(oEvent){
+        debugger;
+      },
       callMe: function () {
         //alert('welcome');
 
