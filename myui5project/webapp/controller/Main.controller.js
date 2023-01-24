@@ -107,17 +107,24 @@ sap.ui.define(
           oSheet.destroy();
         });
       },
-      onSelectChange: function(oEvent){
+      onSelectChange: function (oEvent) {
         debugger;
         var sKey = oEvent.getParameters().selectedItem.getKey();
-        var  sSelectPath = oEvent.getSource().getBindingContext().sPath;
-        var selectRowNo =  sSelectPath.split("/")[2];
+        var sSelectPath = oEvent.getSource().getBindingContext().sPath;
+        var selectRowNo = sSelectPath.split("/")[2];
         var oModel = this.getView().getModel();
-        var stabdata =    oModel.getData().empTab;
-        var gEmpid =   stabdata[selectRowNo].empId;
+        var stabdata = oModel.getData().empTab;
+        var gEmpid = stabdata[selectRowNo].empId;
 
+        for (let i = 0; i < stabdata.length; i++) {
+          var Emmpid = this.getView().getModel().getData().empTab[i].empId;
+          if (Emmpid === gEmpid) {
+            // oEvent.getParameters().selectedItem.setKey(sKey);
+            debugger;
+          }
+        }
       },
-      oncolumnMenuOpen: function(oEvent){
+      oncolumnMenuOpen: function (oEvent) {
         debugger;
       },
       callMe: function () {
