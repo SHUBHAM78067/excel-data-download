@@ -9,7 +9,7 @@
                     <Text text="{empId}" />
                 </t:template>
             </t:Column>
-            <!-- <t:Column>
+            <t:Column>
                 <t:label>
                     <Text text="{i18n>XLBL_EMPNAME}" />
                 </t:label>
@@ -42,9 +42,9 @@
                 <t:template>
                     <RatingIndicator value="{rating}" />
                 </t:template>
-            </t:Column> -->
+            </t:Column>
             <t:Column label="{i18n>XLBL_MSTAT}">
-                <t:template>
+                <t:template>    
                     <Select id="select" selectedKey="{mStat}" change="onSelectChange">
                         <items>
                             <core:Item key="B" text=" " />

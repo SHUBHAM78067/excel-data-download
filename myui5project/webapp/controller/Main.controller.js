@@ -119,8 +119,9 @@ sap.ui.define(
         for (let i = 0; i < stabdata.length; i++) {
           var Emmpid = this.getView().getModel().getData().empTab[i].empId;
           if (Emmpid === gEmpid) {
-            // oEvent.getParameters().selectedItem.setKey(sKey);
+          
             debugger;
+            oModel.getData().empTab[i].mStat = sKey;
           }
         }
       },

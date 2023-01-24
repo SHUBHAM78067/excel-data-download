@@ -110,6 +110,18 @@
             "country": "IN"
         },
         {
+            "empId": "1003",
+            "empName": "Sonia2",
+            "salary": 15000,
+            "currency": "AED",
+            "smoker": false,
+            "gender": "https://cdn-icons-png.flaticon.com/512/146/146025.png",
+            "mStat": "S",
+            "rating": 2,
+            "city": "Bangaluru",
+            "country": "IN"
+        },
+        {
             "empId": "1000",
             "empName": "Riya",
             "salary": 8500,
