@@ -47,7 +47,6 @@ sap.ui.define(
           label: "Full name",
           property: "empName",
           type: EdmType.String,
-          //   template: "{0}, {1}",
         });
 
         aCols.push({
@@ -74,6 +73,10 @@ sap.ui.define(
           type: EdmType.Boolean,
           trueValue: "YES",
           falseValue: "NO",
+        });
+        aCols.push({
+          property: "mStat",
+          type: EdmType.String,
         });
 
         return aCols;
@@ -107,6 +110,42 @@ sap.ui.define(
           oSheet.destroy();
         });
       },
+
+      onUpload: function (e) {
+        this._import(e.getParameter("files") && e.getParameter("files")[0]);
+      },
+  
+      _import: function (file) {
+        var that = this;
+        var excelData = {};
+        if (file && window.FileReader) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            var data = e.target.result;
+            var workbook = XLSX.read(data, {
+              type: 'binary'
+            });
+            workbook.SheetNames.forEach(function (sheetName) {
+              // Here is your object for every sheet in workbook
+              excelData = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+  
+            });
+            // Setting the data to the local model 
+            that.localModel.setData({
+              items: excelData
+            });
+            that.localModel.refresh(true);
+          };
+          reader.onerror = function (ex) {
+            console.log(ex);
+          };
+          reader.readAsBinaryString(file);
+        }
+      },
+
+
+
+
       onSelectChange: function (oEvent) {
         debugger;
         var sKey = oEvent.getParameters().selectedItem.getKey();
@@ -119,13 +158,32 @@ sap.ui.define(
         for (let i = 0; i < stabdata.length; i++) {
           var Emmpid = this.getView().getModel().getData().empTab[i].empId;
           if (Emmpid === gEmpid) {
-          
             debugger;
             oModel.getData().empTab[i].mStat = sKey;
           }
         }
       },
       oncolumnMenuOpen: function (oEvent) {
+        debugger;
+      },
+      onDealer: function (oEvent) {
+        this.getView().byId("idEmpTab").setShowOverlay(false);
+        this.getView().byId("idEmpName").setVisible(true);
+        this.getView().byId("idMstat").setVisible(true);
+        this.getView().byId("idCustName").setVisible(false);
+        this.getView().byId("idGender").setVisible(false);
+        this.getView().byId("idAdd").setVisible(false);
+
+        debugger;
+      },
+      onCsm: function (oEvent) {
+        this.getView().byId("idEmpTab").setShowOverlay(false);
+        this.getView().byId("idCustName").setVisible(true);
+        this.getView().byId("idGender").setVisible(true);
+        this.getView().byId("idAdd").setVisible(true);
+        this.getView().byId("idEmpName").setVisible(false);
+        this.getView().byId("idMstat").setVisible(false);
+
         debugger;
       },
       callMe: function () {
@@ -162,29 +220,31 @@ sap.ui.define(
       //any function of our controller can access this global variable using this
       anu: 100,
       onInit: function () {
+        this.localModel = new sap.ui.model.json.JSONModel();
+        this.getView().setModel(this.localModel, "localModel");
         //alert('my controller object is ready');
-        this.anu = this.anu + 120;
+        // this.anu = this.anu + 120;
         //alert("global variable value is " + this.anu);
-        var oModel = Model.createJSONModel("models/mockdata/sample.json");
+        // var oModel = Model.createJSONModel("models/mockdata/sample.json");
 
-        var oModel2 = Model.createJSONModel("models/mockdata/sample2.json");
+        // var oModel2 = Model.createJSONModel("models/mockdata/sample2.json");
 
-        var oXMLModel = Model.createXMLModel();
+        // var oXMLModel = Model.createXMLModel();
         //Step 3: Make the model aware to the application or view or control
         //this is our default model
-        this.oCore.setModel(oModel);
+        // this.oCore.setModel(oModel);
 
         //at this line -- xml model will supersed the json model
         //this.oCore.setModel(oXMLModel);
 
         //this concept is called named model, to avoid overwriting of default model
-        this.oCore.setModel(oModel2, "got");
+        // this.oCore.setModel(oModel2, "got");
 
-        var oResource = Model.createResourceModel();
-        this.oCore.setModel(oResource, "i18n");
+        // var oResource = Model.createResourceModel();
+        // this.oCore.setModel(oResource, "i18n");
 
         //this.getView().byId("idEmpTab").bindRows("/empTab");
-        this.getView().byId("idEmpTab").bindAggregation("rows", "/empTab");
+        // this.getView().byId("idEmpTab").bindAggregation("rows", "/empTab");
 
         //Syntax No. 3: for binding property
         //this.getView().byId("idSal").bindValue("/empStr/salary");

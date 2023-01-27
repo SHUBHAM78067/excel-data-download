@@ -16,6 +16,7 @@
         {
             "empId": "1000",
             "empName": "Anubhav",
+            "custName": "Ram",
             "salary": 9000,
             "currency": "INR",
             "smoker": true,
@@ -28,6 +29,7 @@
         {
             "empId": "1002",
             "empName": "Anu",
+            "custName": "Sita",
             "salary": 5800,
             "currency": "USD",
             "smoker": true,
@@ -40,6 +42,7 @@
         {
             "empId": "1003",
             "empName": "Govind",
+            "custName": "Laxman",
             "salary": 5800,
             "currency": "USD",
             "smoker": true,
@@ -52,6 +55,7 @@
         {
             "empId": "1004",
             "empName": "Gopal",
+            "custName": "Bali",
             "salary": 5800,
             "currency": "USD",
             "smoker": true,
@@ -64,6 +68,7 @@
         {
             "empId": "1005",
             "empName": "Surya",
+            "custName": "Jatayu",
             "salary": 5800,
             "currency": "USD",
             "smoker": true,
@@ -76,6 +81,7 @@
         {
             "empId": "1002",
             "empName": "Sarla",
+            "custName": "Sugriv",
             "salary": 5800,
             "currency": "USD",
             "smoker": true,
@@ -88,6 +94,7 @@
         {
             "empId": "1002",
             "empName": "Abhishek",
+            "custName": "Angad",
             "salary": 5800,
             "currency": "USD",
             "smoker": true,
@@ -100,6 +107,7 @@
         {
             "empId": "1003",
             "empName": "Sonia",
+            "custName": "Dashrath",
             "salary": 15000,
             "currency": "AED",
             "smoker": false,
@@ -112,6 +120,7 @@
         {
             "empId": "1003",
             "empName": "Sonia2",
+            "custName": "Susain",
             "salary": 15000,
             "currency": "AED",
             "smoker": false,
@@ -124,6 +133,7 @@
         {
             "empId": "1000",
             "empName": "Riya",
+            "custName": "Mahadev",
             "salary": 8500,
             "currency": "AED",
             "smoker": false,
@@ -136,6 +146,7 @@
         {
             "empId": "1005",
             "empName": "Rafael",
+            "custName": "Sagar",
             "salary": 8590,
             "currency": "EUR",
             "smoker": true,
@@ -148,6 +159,7 @@
         {
             "empId": "1006",
             "empName": "Ravikanth",
+            "custName": "Nal",
             "salary": 18000,
             "currency": "USD",
             "smoker": false,
@@ -160,6 +172,7 @@
         {
             "empId": "1000",
             "empName": "Megha",
+            "custName": "Nil",
             "salary": 9800,
             "currency": "CAD",
             "smoker": false,
