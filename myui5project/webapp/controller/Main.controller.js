@@ -223,28 +223,28 @@ sap.ui.define(
         this.localModel = new sap.ui.model.json.JSONModel();
         this.getView().setModel(this.localModel, "localModel");
         //alert('my controller object is ready');
-        // this.anu = this.anu + 120;
+        this.anu = this.anu + 120;
         //alert("global variable value is " + this.anu);
-        // var oModel = Model.createJSONModel("models/mockdata/sample.json");
+        var oModel = Model.createJSONModel("models/mockdata/sample.json");
 
-        // var oModel2 = Model.createJSONModel("models/mockdata/sample2.json");
+        var oModel2 = Model.createJSONModel("models/mockdata/sample2.json");
 
-        // var oXMLModel = Model.createXMLModel();
+        var oXMLModel = Model.createXMLModel();
         //Step 3: Make the model aware to the application or view or control
         //this is our default model
-        // this.oCore.setModel(oModel);
+        this.oCore.setModel(oModel);
 
         //at this line -- xml model will supersed the json model
         //this.oCore.setModel(oXMLModel);
 
         //this concept is called named model, to avoid overwriting of default model
-        // this.oCore.setModel(oModel2, "got");
+        this.oCore.setModel(oModel2, "got");
 
-        // var oResource = Model.createResourceModel();
-        // this.oCore.setModel(oResource, "i18n");
+        var oResource = Model.createResourceModel();
+        this.oCore.setModel(oResource, "i18n");
 
         //this.getView().byId("idEmpTab").bindRows("/empTab");
-        // this.getView().byId("idEmpTab").bindAggregation("rows", "/empTab");
+        this.getView().byId("idEmpTab").bindAggregation("rows", "/empTab");
 
         //Syntax No. 3: for binding property
         //this.getView().byId("idSal").bindValue("/empStr/salary");
