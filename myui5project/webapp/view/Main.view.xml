@@ -1,7 +1,7 @@
 <minion:View xmlns:core="sap.ui.core" xmlns:minion="sap.ui.core.mvc" xmlns:l="sap.ui.layout" 
              xmlns:u="sap.ui.unified" displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form" 
              xmlns:t="sap.ui.table" controllerName="mickey.controller.Main">
-    <!-- <Page id="page" title="Read From Excel">
+    <Page id="page" title="Read From Excel">
         <customHeader>
             <Bar>
                 <contentMiddle>
@@ -42,7 +42,7 @@
                 </items>
             </Table>
         </content>
-    </Page> -->
+    </Page>
 
     <Button id="btnDealer" text="Dealer" press="onDealer" tooltip="Dealer" />
     <Button id="btnCsm" text="CSM" press="onCsm" tooltip="CSM" />
