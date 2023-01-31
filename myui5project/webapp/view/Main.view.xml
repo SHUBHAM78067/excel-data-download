@@ -1,120 +1,79 @@
-<minion:View xmlns:core="sap.ui.core" xmlns:minion="sap.ui.core.mvc" 
-             xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified" 
-             displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form" 
+<minion:View xmlns:core="sap.ui.core" xmlns:minion="sap.ui.core.mvc" xmlns:l="sap.ui.layout" 
+             xmlns:u="sap.ui.unified" displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form" 
              xmlns:t="sap.ui.table" controllerName="mickey.controller.Main">
-             
-    
-        <Page id="page" title="Read From Excel">
-            <customHeader>
-                <Bar>
-                    <contentMiddle>
-                        <Label text="Read Data From Excel" />
-                    </contentMiddle>
-                    <contentRight>
-                        <u:FileUploader id="FileUploaderId" sameFilenameAllowed="true" 
-                                        iconOnly="false" buttonOnly="true" fileType="XLSX,xlsx" 
-                                        icon="sap-icon://upload" iconFirst="true" 
-                                        style="Emphasized" change="onUpload" />
-                    </contentRight>
-                </Bar>
-            </customHeader>
-            <content>
-                <Table items="{localModel>/items}">
-                    <columns>
-                        <Column>
-                            <Label text="Name" />
-                        </Column>
-                        <Column>
-                            <Label text="Age" />
-                        </Column>
-                        <Column>
-                            <Label text="Job" />
-                        </Column>
-                        <Column>
-                            <Label text="Address" />
-                        </Column>
-                    </columns>
-                    <items>
-                        <ColumnListItem>
-                            <cells>
-                                <Text text="{localModel>Name}" />
-                                <Text text="{localModel>Age}" />
-                                <Text text="{localModel>Job}" />
-                                <Text text="{localModel>Address}" />
-                            </cells>
-                        </ColumnListItem>
-                    </items>
-                </Table>
-            </content>
-        </Page>
+    <!-- <Page id="page" title="Read From Excel">
+        <customHeader>
+            <Bar>
+                <contentMiddle>
+                    <Label text="Read Data From Excel" />
+                </contentMiddle>
+                <contentRight>
+                    <u:FileUploader id="FileUploaderId" sameFilenameAllowed="true" iconOnly="false" buttonOnly="true" 
+                                    fileType="XLSX,xlsx" icon="sap-icon://upload" iconFirst="true" 
+                                    style="Emphasized" change="onUpload" />
+                </contentRight>
+            </Bar>
+        </customHeader>
+        <content>
+            <Table items="{localModel>/items}">
+                <columns>
+                    <Column>
+                        <Label text="Name" />
+                    </Column>
+                    <Column>
+                        <Label text="Age" />
+                    </Column>
+                    <Column>
+                        <Label text="Job" />
+                    </Column>
+                    <Column>
+                        <Label text="Address" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{localModel>Name}" />
+                            <Text text="{localModel>Age}" />
+                            <Text text="{localModel>Job}" />
+                            <Text text="{localModel>Address}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page> -->
 
-    <Button text="Dealer" press="onDealer" tooltip="Dealer" />
-    <Button text="CSM" press="onCsm" tooltip="CSM" />
-    <!-- <l:VerticalLayout>
-        <u:FileUploader id="fileUploader" placeholder="Choose a file for Upload..." fileType="XLSX,xlsx">
-            <u:parameters>
-                <u:FileUploaderParameter name="Accept-CH" value="Viewport-Width" />
-                <u:FileUploaderParameter name="Accept-CH" value="Width" />
-                <u:FileUploaderParameter name="Accept-CH-Lifetime" value="86400" />
-            </u:parameters>
-        </u:FileUploader>
-        <Button text="Upload File" press="onUpload" />
-        <Table items="{localModel>/items}">
-            <columns>
-                <Column>
-                    <Label text="Name" />
-                </Column>
-                <Column>
-                    <Label text="Age" />
-                </Column>
-                <Column>
-                    <Label text="Job" />
-                </Column>
-                <Column>
-                    <Label text="Address" />
-                </Column>
-            </columns>
-            <items>
-                <ColumnListItem>
-                    <cells>
-                        <Text text="{localModel>Name}" />
-                        <Text text="{localModel>Age}" />
-                        <Text text="{localModel>Job}" />
-                        <Text text="{localModel>Address}" />
-                    </cells>
-                </ColumnListItem>
-            </items>
-        </Table>
-    </l:VerticalLayout> -->
-
+    <Button id="btnDealer" text="Dealer" press="onDealer" tooltip="Dealer" />
+    <Button id="btnCsm" text="CSM" press="onCsm" tooltip="CSM" />
     <t:Table id="idEmpTab" visibleRowCount="5" selectionMode="Single" rowSelectionChange="onRowSelect" showOverlay="true">
-        <t:extension>
+        <!-- <t:extension>
             <OverflowToolbarButton text="Download" icon="sap-icon://download" press="onExport" tooltip="Download" />
-        </t:extension>
+        </t:extension> -->
 
         <t:columns>
-            <t:Column label="{i18n>XLBL_EMPID}" id="idEmpId" columnMenuOpen="oncolumnMenuOpen">
+            <t:Column label="{i18n>XLBL_EMPID}" id="idEmpId">
                 <t:template>
                     <Text text="{empId}" />
                 </t:template>
             </t:Column>
-            <t:Column id="idEmpName">
+            <t:Column  >
                 <t:label>
                     <Text text="{i18n>XLBL_EMPNAME}" />
                 </t:label>
                 <t:template>
-                    <Input value="{path : 'empName', formatter: '.formatter.convertName'}" />
+                    <Input id="idEmpName" value="{path : 'empName', formatter: '.formatter.convertName'}" editable="false"/>
                 </t:template>
             </t:Column>
-            <t:Column id="idCustName">
+            <t:Column >
                 <t:label>
                     <Text text="Customer Name" />
                 </t:label>
                 <t:template>
-                    <Input value="{path : 'custName', formatter: '.formatter.convertName'}" />
+                    <Input id="idCustName" value="{path : 'custName', formatter: '.formatter.convertName'}" editable="false"/>
                 </t:template>
             </t:Column>
-            <t:Column label="{i18n>XLBL_SALARY}" id="idSalary">
+            <t:Column label="{i18n>XLBL_SALARY}">
                 <t:template>
                     <HBox>
                         <Text text="{ parts: [ { path: 'salary'  },
@@ -125,24 +84,31 @@
                     </HBox>
                 </t:template>
             </t:Column>
-            <t:Column label="{i18n>XLBL_SMK}" id="idSmoker">
+            <!-- <t:Column label="{i18n>XLBL_SMK}" id="idSmoker">
                 <t:template>
                     <CheckBox selected="{= ${smoker} === 'true' ? true : false}" />
                 </t:template>
-            </t:Column>
-            <t:Column label="{i18n>XLBL_GEN}" id="idGender">
+            </t:Column> -->
+            <t:Column label="{i18n>XLBL_GEN}">
                 <t:template>
-                    <Image width="30px" height="30px" src="{gender}" />
+                  <Select id="selectGen" selectedKey="{gender}" change="onSelectGenChange" editable="false">
+                        <items>
+                            <core:Item key="M" text="Male" />
+                            <core:Item key="F" text="Female" />
+                            
+                        </items>
+                    </Select>
+                    <!-- <Image width="30px" height="30px" src="{gender}" /> -->
                 </t:template>
             </t:Column>
-            <t:Column label="{i18n>XLBL_RATE}" id="idRating">
+            <t:Column label="{i18n>XLBL_RATE}" >
                 <t:template>
-                    <RatingIndicator value="{rating}" />
+                    <RatingIndicator id="idRating" value="{rating}" editable="false"/>
                 </t:template>
             </t:Column>
             <t:Column label="{i18n>XLBL_MSTAT}" id="idMstat">
                 <t:template>
-                    <Select id="select" selectedKey="{mStat}" change="onSelectChange">
+                    <Select id="select" selectedKey="{mStat}" change="onSelectChange" editable="false">
                         <items>
                             <core:Item key="B" text=" " />
                             <core:Item key="M" text="Married" />
@@ -157,7 +123,7 @@
                     <Text text="Customer Add." />
                 </t:label>
                 <t:template>
-                    <Input />
+                    <Input editable="false"/>
                 </t:template>
             </t:Column>
         </t:columns>

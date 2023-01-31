@@ -114,7 +114,7 @@ sap.ui.define(
       onUpload: function (e) {
         this._import(e.getParameter("files") && e.getParameter("files")[0]);
       },
-  
+
       _import: function (file) {
         var that = this;
         var excelData = {};
@@ -123,16 +123,17 @@ sap.ui.define(
           reader.onload = function (e) {
             var data = e.target.result;
             var workbook = XLSX.read(data, {
-              type: 'binary'
+              type: "binary",
             });
             workbook.SheetNames.forEach(function (sheetName) {
               // Here is your object for every sheet in workbook
-              excelData = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
-  
+              excelData = XLSX.utils.sheet_to_row_object_array(
+                workbook.Sheets[sheetName]
+              );
             });
-            // Setting the data to the local model 
+            // Setting the data to the local model
             that.localModel.setData({
-              items: excelData
+              items: excelData,
             });
             that.localModel.refresh(true);
           };
@@ -142,9 +143,6 @@ sap.ui.define(
           reader.readAsBinaryString(file);
         }
       },
-
-
-
 
       onSelectChange: function (oEvent) {
         debugger;
@@ -163,26 +161,34 @@ sap.ui.define(
           }
         }
       },
-      oncolumnMenuOpen: function (oEvent) {
-        debugger;
-      },
       onDealer: function (oEvent) {
         this.getView().byId("idEmpTab").setShowOverlay(false);
-        this.getView().byId("idEmpName").setVisible(true);
-        this.getView().byId("idMstat").setVisible(true);
-        this.getView().byId("idCustName").setVisible(false);
-        this.getView().byId("idGender").setVisible(false);
-        this.getView().byId("idAdd").setVisible(false);
+        var oModel = this.getView().getModel();
+        var stabdata = oModel.getData().empTab;
+        var trows = this.getView().byId("idEmpTab").getRows();
+        for (let i = 0; i < trows.length; i++) {
+          this.getView().byId("idEmpTab").getRows()[i].getCells()[1].setEditable(true);
+          this.getView().byId("idEmpTab").getRows()[i].getCells()[6].setEditable(true);
 
+          this.getView().byId("idEmpTab").getRows()[i].getCells()[2].setEditable(false);
+          this.getView().byId("idEmpTab").getRows()[i].getCells()[4].setEditable(false);
+          this.getView().byId("idEmpTab").getRows()[i].getCells()[7].setEditable(false);          
+        }
+        
         debugger;
       },
       onCsm: function (oEvent) {
         this.getView().byId("idEmpTab").setShowOverlay(false);
-        this.getView().byId("idCustName").setVisible(true);
-        this.getView().byId("idGender").setVisible(true);
-        this.getView().byId("idAdd").setVisible(true);
-        this.getView().byId("idEmpName").setVisible(false);
-        this.getView().byId("idMstat").setVisible(false);
+        var oModel = this.getView().getModel();
+        var stabdata = oModel.getData().empTab;
+        var trows = this.getView().byId("idEmpTab").getRows();
+        for (let i = 0; i < trows.length; i++) {
+          this.getView().byId("idEmpTab").getRows()[i].getCells()[1].setEditable(false);
+          this.getView().byId("idEmpTab").getRows()[i].getCells()[2].setEditable(true);
+          this.getView().byId("idEmpTab").getRows()[i].getCells()[4].setEditable(true);
+          this.getView().byId("idEmpTab").getRows()[i].getCells()[6].setEditable(false);
+          this.getView().byId("idEmpTab").getRows()[i].getCells()[7].setEditable(true);          
+        }
 
         debugger;
       },
