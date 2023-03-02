@@ -163,8 +163,6 @@ sap.ui.define(
       },
       onDealer: function (oEvent) {
         this.getView().byId("idEmpTab").setShowOverlay(false);
-        var oModel = this.getView().getModel();
-        var stabdata = oModel.getData().empTab;
         var trows = this.getView().byId("idEmpTab").getRows();
         for (let i = 0; i < trows.length; i++) {
           this.getView().byId("idEmpTab").getRows()[i].getCells()[1].setEditable(true);
@@ -179,8 +177,6 @@ sap.ui.define(
       },
       onCsm: function (oEvent) {
         this.getView().byId("idEmpTab").setShowOverlay(false);
-        var oModel = this.getView().getModel();
-        var stabdata = oModel.getData().empTab;
         var trows = this.getView().byId("idEmpTab").getRows();
         for (let i = 0; i < trows.length; i++) {
           this.getView().byId("idEmpTab").getRows()[i].getCells()[1].setEditable(false);
